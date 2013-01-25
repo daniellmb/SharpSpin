@@ -77,7 +77,7 @@ If you follow this advice, you will get highly different output that will stay r
 ### Documentation 
 
 ##### Options:
-You can use custom section `{}` and option `|` delimeters if you'd like. For example it's possible to do something like this if you prefer:
+You can use custom section `{}` and option `|` delimeters if you'd like. For example it's possible to do something like this:
 ```
 The [quick~fast] brown fox jumped over the lazy dog.
 ```

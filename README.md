@@ -25,7 +25,7 @@ var spun_text = Spinner.Spin("The {quick|fast} brown fox jumped over the lazy do
 ### Quick Guide to Spinning Syntax
 
 #### Nested Spinning Vs. Flat Spinning
-There are 2 types of spinning – flat spinning (Jet format) and nested spinning. Flat spun content only has one level of spinning, while A nested spun format, like The Best Spinner native format, allows you to spin phrases within phrases or multiple levels of spinning.
+There are 2 types of spinning - flat spinning (Jet format) and nested spinning. Flat spun content only has one level of spinning, while a nested spun format allows you to spin phrases within phrases.
 
 Sample sentence
 > The quick brown fox jumped over the lazy dog.

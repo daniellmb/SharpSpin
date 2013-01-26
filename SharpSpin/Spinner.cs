@@ -15,6 +15,7 @@ namespace SharpSpin
     public static class Spinner
     {
         public static IRandomizer Randomizer = new RealRandom();
+        public static int permutations = 1;
         private const char OPEN_BRACE = '{';
         private const char CLOSE_BRACE = '}';
         private const char DELIMITER = '|';
@@ -46,7 +47,7 @@ namespace SharpSpin
             //recursion
             var rest = Spin(substring);
             end = rest.IndexOf(CLOSE_BRACE);
-
+            
             //check for issues
             if (end == -1)
             {
@@ -56,11 +57,23 @@ namespace SharpSpin
             //get spin options
             var options = rest.Substring(0, end).Split(DELIMITER);
 
+            //update permutations count
+            permutations *= options.Length;
+
             //get random item
             var item = options[Randomizer.Generate(options.Length)];
 
             //substitute content and recurse the rest
             return content.Substring(0, start) + item + Spin(rest.Substring(end + 1, rest.Length - (end + 1)));
+        }
+
+        public static int Permutations(string content)
+        {
+            permutations = 1;
+
+            Spin(content);
+
+            return permutations;
         }
     }
 }

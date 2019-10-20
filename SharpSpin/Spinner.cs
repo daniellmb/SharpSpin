@@ -45,7 +45,7 @@ namespace SharpSpin
             var substring = content.Substring(start + 1, content.Length - (start + 1));
 
             //recursion
-            var rest = Spin(substring);
+            var rest = Spin(substring, seed);
             end = rest.IndexOf(CLOSE_BRACE);
             
             //check for issues

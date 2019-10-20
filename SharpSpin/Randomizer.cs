@@ -8,14 +8,21 @@ namespace SharpSpin
 {
     public interface IRandomizer
     {
-        int Generate(int max);
+        int Generate(int max, int? seed = null);
     }
 
     public class RealRandom : IRandomizer
     {
-        public int Generate(int max)
+        public int Generate(int max, int? seed = null)
         {
-            return (new Random()).Next(0, max);
+            if (seed != null)
+            {
+                return (new Random(seed.Value)).Next(0, max);
+            }
+            else
+            {
+                return (new Random()).Next(0, max);
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ namespace SharpSpin
         private const char CLOSE_BRACE = '}';
         private const char DELIMITER = '|';
 
-        public static string Spin(string content)
+        public static string Spin(string content, int? seed = null)
         {
             //quick data sanity check
             if (content == null)
@@ -45,7 +45,7 @@ namespace SharpSpin
             var substring = content.Substring(start + 1, content.Length - (start + 1));
 
             //recursion
-            var rest = Spin(substring);
+            var rest = Spin(substring, seed);
             end = rest.IndexOf(CLOSE_BRACE);
             
             //check for issues
@@ -61,10 +61,10 @@ namespace SharpSpin
             permutations *= options.Length;
 
             //get random item
-            var item = options[Randomizer.Generate(options.Length)];
+            var item = options[Randomizer.Generate(options.Length, seed)];
 
             //substitute content and recurse the rest
-            return content.Substring(0, start) + item + Spin(rest.Substring(end + 1, rest.Length - (end + 1)));
+            return content.Substring(0, start) + item + Spin(rest.Substring(end + 1, rest.Length - (end + 1)), seed);
         }
 
         public static int Permutations(string content)

@@ -20,6 +20,9 @@ Effortlessly create variations of your text, either for possible SEO benefit or 
 
 ```
 var spun_text = Spinner.Spin("The {quick|fast} brown fox jumped over the lazy dog.");
+
+var spun_text = Spinner.Spin("The {quick|fast} brown fox jumped over the lazy dog.", 555); //You can send a seed for the randomizer if you want it to static for a particular page
+
 ```
 
 ### Quick Guide to Spinning Syntax

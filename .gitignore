@@ -57,3 +57,7 @@ _ReSharper*/
 
 #NuGet
 packages/
+/SharpSpin/.vs/SharpSpin/v15/Server/sqlite3
+/.vs
+/SharpSpin/.vs/SharpSpin/DesignTimeBuild
+/SharpSpin/.vs/SharpSpin/v16/Server/sqlite3

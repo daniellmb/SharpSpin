@@ -64,7 +64,7 @@ namespace SharpSpin
             var item = options[Randomizer.Generate(options.Length, seed)];
 
             //substitute content and recurse the rest
-            return content.Substring(0, start) + item + Spin(rest.Substring(end + 1, rest.Length - (end + 1)));
+            return content.Substring(0, start) + item + Spin(rest.Substring(end + 1, rest.Length - (end + 1)), seed);
         }
 
         public static int Permutations(string content)
